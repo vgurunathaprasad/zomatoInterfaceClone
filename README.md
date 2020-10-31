@@ -3,6 +3,8 @@
 
 I am creating this project for a HACKATHON, which is a part of GUVI's Full Stack Developer Course Assesment. There were six problems, I prayed to god that I should not get this one project because I never ordered food online, I am not used to Zomato's app or interface, I have no idea about their API (well this is all nostalgic), but I got this specific project. Well let's see how far I can take this. I am hoping this to be a lot more fun than I am expecting it to be.
 
+This front-end app has to be built with feature that can get location and fetch available resturants in the location and must be able to fetch the menu of the resturant once the resturant is selected.
+
 Well let me begin.
 
 Roadmap:
@@ -17,5 +19,3 @@ Roadmap:
 7. Filling screens with respective data
 8. Bring out the expected flow.
 9. May be some final touch (if required)
-
-
