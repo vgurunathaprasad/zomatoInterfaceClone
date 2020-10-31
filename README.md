@@ -7,7 +7,7 @@ This front-end app has to be built with feature that can get location and fetch 
 
 Well let me begin.
 
-Roadmap:
+Roadmap
 -------
 
 1. Get the Zomato API guide
