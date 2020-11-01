@@ -1,0 +1,40 @@
+.white {
+    color:#ffffff;
+}
+
+.hidden{
+    display:none;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.contain {
+    padding:5%;
+    border:solid 3px #eb6864;
+    border-radius: 8px;
+}
+
+.header-text {
+    text-align: center;
+    color: #eb6864;
+    border: solid 3px #eb6864;
+    border-radius: 8px;
+}
+
+.z-red {
+    color: #eb6864;
+}
+
+.bdr-z-red{
+    border-color: #eb6864;
+}
+
+.card {
+    max-width: 20rem;
+    padding:5px;
+}

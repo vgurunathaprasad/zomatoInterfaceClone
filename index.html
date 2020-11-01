@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Lite</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container header-text">
+        <h1>Zomato Lite</h1>
+        <h5>Lookup resturants and respective menus from Zomato with no ads and no tracking</h5>
+    </div>
+
+    <br>
+
+    <div class="container contain center">
+
+
+            <div class="col-4">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="getCityDetailsWithLatAndLong()">Get Location</button>  
+                </div>
+            </div>
+            <br> 
+            <h2 class="z-red">-- OR --</h2>
+            <br>
+            <div class="col-8">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="form-group">
+                                <input class="form-control form-control-lg bdr-z-red" type="text" placeholder="Where are you? (eg. Chennai, Erode)" id="cityName">
+                                <div class="hidden" id="cityFeedback">Sorry, Unknown city. Try another?</div>
+                              </div>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-primary btn-lg" onclick="">Get Resturants</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+
+
+    </div>
+    <br>
+
+
+    <div class="container contain" >
+        <div class="row" id="resturants">
+
+        </div>
+
+
+    </div>
+
+    <br>
+
+    <div class="container contain center" id="menu">
+
+    </div>
+
+      
+
+      
+     
+      
+
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
+
+<!--
+    <div class="jumbotron bg-primary" >
+        <h1 class="display-3 white">Zomato Lite</h1>
+        <p class="lead white">A simple App to look for nearby resturants and their menu.</p>
+        <br>
+        <p class="white">It uses Zomato API! - Thank you Zomato &#128512; &#128516; &#128525; &#128151;</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+      </div>
+-->
