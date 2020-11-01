@@ -14,7 +14,7 @@
 }
 
 .contain {
-    padding:5%;
+    padding:3%;
     border:solid 3px #eb6864;
     border-radius: 8px;
 }
@@ -34,7 +34,6 @@
     border-color: #eb6864;
 }
 
-.card {
-    max-width: 20rem;
-    padding:5px;
+.mb-3{
+    border-color:solid 5px #ffffff;
 }

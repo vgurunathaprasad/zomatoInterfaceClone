@@ -97,7 +97,25 @@ function getCityDetailsWithLatAndLong() {
 }
 
 function getCityDetailsWithName(){
-    var cname = document.getElementById("cityName").innerText;
+    var cname = document.getElementById("cityName").value;
+    uri = "https://developers.zomato.com/api/v2.1/cities?q="+cname;
+    console.log(uri);
+
+    var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    var bj = JSON.parse(this.responseText);
+                    console.log(bj.location_suggestions[0].id);
+                    getResturnatsThruCityDetail(bj.location_suggestions[0].id);
+                }
+            };
+        xhttp.open("GET", uri, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.setRequestHeader("user-key", "276156ab0a47b735331ced061c878585");
+        xhttp.send();
+
+
 }
 
 function getResturnatsThruCityDetail(cid){
@@ -110,18 +128,20 @@ function getResturnatsThruCityDetail(cid){
           var obg = JSON.parse(this.responseText);
 
           var dres = document.getElementById("resturants");
+          dres.innerHTML ="";
           for(i=0;i<obg.restaurants.length;i++){
               console.log(obg.restaurants[i].restaurant.name);
+              var mdiv = document.createElement("div");
+              mdiv.classList.add("col-4");
+
               var div1 = document.createElement("div");
+             
               div1.classList.add("card");
               div1.classList.add("text-white");
               div1.classList.add("bg-primary");
               div1.classList.add("mb-3");
 
-              var div2 = document.createElement("div");
-              div2.classList.add("card-header");
-              div2.innerHTML = "Header";
-              div1.appendChild(div2);
+              
 
               var div3 = document.createElement("div");
               div3.classList.add("card-body");
@@ -131,22 +151,43 @@ function getResturnatsThruCityDetail(cid){
               var cp1 = document.createElement("p");
               cp1.classList.add("card-text");
               cp1.innerHTML = "Address: "+ obg.restaurants[i].restaurant.location.address;
-              div3.appendChild(cp1);
-              var rid = obg.restaurants[i].restaurant.R.res_id;
-              var br = document.createElement("br");
-              div3.appendChild(br);
+              
+              var rid = obg.restaurants[i].restaurant.id;
+              console.log(rid);
+              
               var btn = document.createElement("button");
               btn.classList.add("btn");
               btn.classList.add("btn-info")
               btn.innerText = "Get Menu";
-              div3.appendChild(btn);
+              btn.onclick = function (){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                  }
+                };
+                console.log("https://developers.zomato.com/api/v2.1/dailymenu?res_id="+rid);
+                xhttp.open("GET", "https://developers.zomato.com/api/v2.1/dailymenu?res_id="+rid, true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.setRequestHeader("user-key", "276156ab0a47b735331ced061c878585");
+                xhttp.send();
+              }
+              
 
 
 
               div3.appendChild(ct);
+              var br = document.createElement("br");
+              div3.appendChild(br);
+              div3.appendChild(cp1);
+              div3.appendChild(btn);
+              var br1 = document.createElement("br");
+              div3.appendChild(br1);
+              
               div1.appendChild(div3);
-
-              dres.appendChild(div1);
+              
+              mdiv.appendChild(div1);
+              dres.appendChild(mdiv);
           }
         }
       };
