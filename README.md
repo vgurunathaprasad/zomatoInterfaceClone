@@ -11,7 +11,7 @@ Roadmap
 -------
 
 1. Get the Zomato API guide
-2. Call some API's that looks necessary and get the JSOM messages
+2. Call some API's that looks necessary and get the JSON messages
 3. Examine the JSON, make sense of the response and get an idea of what the app needs and how can I use the response.
 4. Getting a custom bootstrap theme that will suite the app
 5. Building flows and screens
